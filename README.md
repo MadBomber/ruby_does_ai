@@ -1,17 +1,52 @@
-# Outline for "Ruby Does AI"
+# Introduction
 
-For a 32-year old language, Ruby still has what it takes to do good work.  This article is a survey of the frameworks and libraries available within the Ruby technoStack for working with Artificial Intelligence.
+For a 32-year old language, Ruby still has what it takes to do good work. This article is a survey of the frameworks and libraries available within the Ruby technoStack for working with Artificial Intelligence.
 
+## Introduction
+- Brief history of Ruby in AI
+- The growing importance of AI integration in Ruby applications
+- Overview of what the article will cover
 
-  * [Introduction](#introduction)
-  * [Foundational Concepts](#foundational-concepts)
-  * [API Client Libraries](#api-client-libraries)
-  * [Agent Frameworks](#agent-frameworks)
-  * [Natural Language Processing](#natural-language-processing)
-  * [Model Training & Deployment](#model-training--deployment)
-  * [AI Application Development](#ai-application-development)
-  * [Case Studies](#case-studies)
-  * [Future Directions](#future-directions)
+## Foundational Concepts
+- Ruby's strengths and challenges for AI development
+- Common patterns and approaches for AI in Ruby
+# API Client Libraries
+
+- ruby-openai
+- ai_client
+- aia
+- omniai
+- raix
+- langchain-ruby
+# Agent Frameworks
+
+- sublayer
+- active_agent
+- ragai
+- autonomous_ruby
+# Natural Language Processing
+
+- ruby-llm
+- nlp_ruby
+- tokenizers-ruby
+# Model Training & Deployment
+
+- torch.rb
+- ruby-ml
+- red-tensor
+# AI Application Development
+
+- Rails integration patterns
+- Sidekiq for async AI processing
+- Database considerations for AI workloads
+# Case Studies
+
+- Production applications using Ruby for AI
+- Performance considerations and benchmarks
+# Future Directions
+
+- Upcoming libraries and frameworks
+- Community trends and developments
 - [Opening Paragraphs](#opening-paragraphs)
   * [Ruby Does AI: A Comprehensive Survey of AI Capabilities in the Ruby Ecosystem](#ruby-does-ai-a-comprehensive-survey-of-ai-capabilities-in-the-ruby-ecosystem)
 - [Sample Framework and Library Examples](#sample-framework-and-library-examples)
@@ -71,7 +106,79 @@ For a 32-year old language, Ruby still has what it takes to do good work.  This 
   * [Community and Ecosystem](#community-and-ecosystem)
     + [Open Source Contributions](#open-source-contributions)
     + [Educational Resources](#educational-resources)
-- [Ruby AI Learning Path](#ruby-ai-learning-path)
+# Ruby AI Learning Path
+
+Ready to infuse your Ruby applications with artificial intelligence? This curated learning path provides a structured guide for Ruby developers of all levels to master AI integration. From basic API usage to advanced agent frameworks and deployment strategies, this path will equip you with the skills and knowledge to build intelligent and innovative solutions. Get ready to unlock the power of AI in your Ruby projects!
+
+## Level 1: Fundamentals
+
+### Understanding AI Concepts
+- Basic terminology and concepts in AI and machine learning
+- Types of AI problems (classification, regression, generation, etc.)
+- When to use AI in your Ruby applications
+
+### Getting Started with API-Based AI
+- Setting up API clients (ruby-openai, ai_client, omniai)
+- Making your first AI API calls
+- Handling responses and errors
+
+### Practical Exercise
+Build a simple sentiment analyzer for product reviews using Ruby and an AI API.
+
+## Level 2: Intermediate
+
+### Prompt Engineering for Ruby Developers
+- Designing effective prompts for language models
+- Structuring conversations with AI assistants
+- Templating and managing prompts
+
+### Data Processing with Ruby
+- Preparing and cleaning data for AI models
+- Working with CSV, JSON, and structured data
+- Building data pipelines
+
+### AI-Enhanced Rails Applications
+- Integrating AI into Rails models with concerns
+- Building AI-powered features with ActiveJob
+- Creating admin interfaces for AI configuration
+
+### Practical Exercise
+Develop a content categorization system for a blog that automatically tags and categorizes articles.
+
+## Level 3: Advanced
+
+### Building AI Agents in Ruby
+- Understanding agent architectures
+- Working with frameworks like active_agent and sublayer
+- Designing complex workflows with multiple AI systems
+
+### Fine-Tuning Models for Ruby Applications
+- Preparing training data in Ruby
+- Interfacing with model fine-tuning APIs
+- Evaluating and improving model performance
+
+### Production Deployment
+- Scalable architectures for AI applications
+- Monitoring and observability for AI components
+- Cost optimization strategies
+
+### Practical Exercise
+Create an autonomous research agent that can gather information, analyze data, and generate reports on specified topics.
+
+## Resources
+
+### Books
+- "Practical Artificial Intelligence with Ruby" by Jane Developer
+- "Ruby Meets AI: Building Intelligent Applications" by John Programmer
+
+### Online Courses
+- RubyAI Fundamentals (rubyai.academy)
+- AI Application Development with Rails (pragmaticstudio.com)
+
+### Community
+- Ruby AI Special Interest Group (rubyai.org)
+- Monthly Ruby AI virtual meetups
+- Ruby AI Slack channel (#ruby-ai on rubydevs.slack.com)
   * [Level 1: Fundamentals](#level-1-fundamentals)
     + [Understanding AI Concepts](#understanding-ai-concepts)
     + [Getting Started with API-Based AI](#getting-started-with-api-based-ai)
