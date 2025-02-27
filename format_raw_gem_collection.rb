@@ -6,6 +6,7 @@ ai = AiClient.new "gpt-4o-mini"
 require "open-uri"
 
 gems = %w[
+  action_prompt
   activeagent
   agent99
   ai-engine
@@ -61,6 +62,7 @@ def download_readme(gem_name, homepage, branch)
   url = "#{homepage}/raw/#{branch}/README.md"
   dir = "gems/#{gem_name}"
   FileUtils.mkdir_p(dir) unless Dir.exist?(dir)
+  return true if File.exist?("#{dir}/README.md")
   begin
     content = URI.open(url).read
     File.write("#{dir}/README.md", content)
@@ -87,13 +89,15 @@ gems.each do |gem_name|
       Be terse in your response.  Only provided the information requested.
       Don not label your response.  Use common abbreviations.such as
       AI for Artificial Intelligence and ML for Machine Learning.
+      Categories are API Wrapper, CLI tool, Prompt Mgmt, Classic AI/ML, Rails Integration,
+      AI/ML Library.  Use the best fit or come up with a new category if none of the above fit.
       what category would you file the following Ruby gem under?
         Name: #{g.name}
       Summary: #{g.summary}
       Description: #{g.description}
     PROMPT
     category = ai.chat(prompt)
-    f.puts "| #{category} | #{gem_name} | #{g.summary} |"
+    f.puts "| #{category} | [#{gem_name}](#{g.homepage}) | #{g.summary} |"
 
     if !download_readme(gem_name, g.homepage, "main")
       download_readme(gem_name, g.homepage, "master")
