@@ -1,6 +1,8 @@
 #!/usr/bin/env ruby -wKU
 
-require 'rubygems'
+require 'ai_client'
+ai = AiClient.new "gpt-4o-mini"
+
 
 gems = %w[
 activeagent
@@ -20,11 +22,6 @@ eps
 faiss
 gimuby
 groq
-guard-brakeman
-guard-migrate
-guard-rails_best_practices
-hairtrigger
-haml-rails
 instructor-rb
 intelligence
 jumon
@@ -55,22 +52,33 @@ rumale-naive_bayes
 rumale-pipeline
 stuff-classifier
 sublayer
-superglue
-tailwindcss-rails
-tailwindcss-ruby
-test-prof
 tiktoken_ruby
 tiny-classifier
 ]
 
-print "## Raw Gem List\n\n"
-puts "| gem name | summary |"
-puts "| --- | --- "
+f = File.open('raw_gem_list.md', 'w')
+
+f.print "## Raw Gem List\n\n"
+f.puts "| category | gem name | summary |"
+f.puts "| --- | --- | --- "
 gems.each do |gem_name|
   begin
     g = Gem::Specification.find_by_name(gem_name)
-    puts "| [#{g.name}](#{g.homepage}) | #{g.summary} |"
+    puts "#{gem_name} ..."
+    prompt = <<~PROMPT
+      Be terse in your response.  Only provided the information requested.
+      Don not label your response.  Use common abbreviations.such as
+      AI for Artificial Intelligence and ML for Machine Learning.
+      what category would you file the following Ruby gem under?
+        Name: #{g.name}
+      Summary: #{g.summary}
+      Description: #{g.description}
+    PROMPT
+    category = ai.chat(prompt)
+    f.puts "| #{category} | #{gem_name} | #{g.summary} |"
   rescue Gem::LoadError
-    puts "| #{gem_name} | Not found |"
+    puts "| #{gem_name} | Not found | |"
   end
 end
+
+f.close
